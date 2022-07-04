@@ -1,6 +1,6 @@
 class List < ApplicationRecord
   has_many :bookmarks
-  mas_many :movies, through: :bookmarks
+  has_many :movies, through: :bookmarks
 
-  validates :name, presence: true, uiqueness: true
+  validates :name, presence: true, uniqueness: true
 end
