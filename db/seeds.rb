@@ -14,7 +14,12 @@ Movie.create(title: "The Shawshank Redemption", overview: "Framed in the 1940s f
 Movie.create(title: "Titanic", overview: "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic.", poster_url: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", rating: 7.9)
 Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
 
-list1 = List.new(name: "netflix n' chill")
-file1 = URI.open("https://res.cloudinary.com/dttr43kl6/image/upload/v1657031394/yse3ms5xpdhvnl4pqvcn.jpg")
-list1.photo.attach(io: file1, filename: 'list1.jpg', content_type: 'image/jpg')
+list1 = List.create!(name: "netflix n' chill")
+
+image_list1 = URI.open("https://res.cloudinary.com/dttr43kl6/image/upload/v1657031394/yse3ms5xpdhvnl4pqvcn.jpg")
+puts "Test 1 ok"
+list1.photo.attach(io: image_list1, filename: "yse3ms5xpdhvnl4pqvcn.jpg", content_type: "image/jpg")
+puts "test 2 ok"
 list1.save
+puts "PAS DE BUG"
+
